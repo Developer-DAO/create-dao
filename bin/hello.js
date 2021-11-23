@@ -1,16 +1,20 @@
-#! /usr/bin/env node
+const inquirer = require('inquirer');
 
-// console.log('Hello from `create-dao`');
-const inquirer = require('inquirer')
-
-var questions = [
+const questions = [
   {
-    type: 'input',
-    name: 'name',
-    message: "What's your DAO name?"
-  }
-]
+    name: 'DAO_name',
+    message: 'What is your DAO name?',
+    default: 'Developer DAO',
+  },
+  {
+    name: 'DAO_symbol',
+    message: 'What is your DAO sybmol?',
+    default: 'Dev_DAO',
+  },
+];
 
-inquirer.prompt(questions).then(answers => {
-  console.log(`${answers['name']} DAO created!`)
-})
+inquirer.prompt(questions).then((answers) => {
+  questions.forEach((question) => {
+    console.log(`${question.name}: ${answers[question.name]}`);
+  });
+});
