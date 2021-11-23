@@ -32,4 +32,11 @@ Note the address of the contract.
 
 (except the wrapping of `create-next-app` and a few modifications, this is mostly taken from https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
 
+### How this template will be used on a livenet:
+
+1. Run `npx create-dao <dao_name>`
+2. Answer questions according to your preference.
+3. `cd <dao_name>`
+4. `yarn deploy:contract`
+5. TBD..
 ## [Contributing](CONTRIBUTING.md)
