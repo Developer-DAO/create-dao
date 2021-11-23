@@ -11,5 +11,8 @@
   "license": "ISC",
   "bin": {
     "hello": "bin/hello.js"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
   }
 }
