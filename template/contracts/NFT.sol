@@ -35,14 +35,15 @@ contract NFT is ERC721Enumerable, Ownable {
     // public
     function mint(uint256 _mintAmount) public payable {
         uint256 supply = totalSupply();
-        require(!paused);
-        require(_mintAmount > 0);
-        require(_mintAmount <= maxMintAmount);
-        require(supply + _mintAmount <= maxSupply);
+        require(!paused, "mint is not paused");
+        require(_mintAmount > 0, "mint amount must be greater than 0");
+        require(
+            _mintAmount <= maxMintAmount,
+            "mint amount must be less than or equal to max mint amount"
+        );
+        require(supply + _mintAmount <= maxSupply, "not enough supply");
 
-        if (msg.sender != owner()) {
-            require(msg.value >= cost * _mintAmount);
-        }
+        require(msg.value >= cost * _mintAmount, "not enough ether sent");
 
         for (uint256 i = 1; i <= _mintAmount; i++) {
             _safeMint(msg.sender, supply + i);
@@ -74,7 +75,7 @@ contract NFT is ERC721Enumerable, Ownable {
             "ERC721Metadata: URI query for nonexistent token"
         );
 
-        if (revealed == false) {
+        if (!revealed) {
             return notRevealedUri;
         }
 
@@ -100,7 +101,7 @@ contract NFT is ERC721Enumerable, Ownable {
         cost = _newCost;
     }
 
-    function setmaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner {
+    function setMaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner {
         maxMintAmount = _newmaxMintAmount;
     }
 
@@ -127,8 +128,8 @@ contract NFT is ERC721Enumerable, Ownable {
         // This will payout the owner 100% of the contract balance.
         // Do not remove this otherwise you will not be able to withdraw the funds.
         // =============================================================================
-        (bool os, ) = payable(owner()).call{value: address(this).balance}("");
-        require(os);
+        (bool success, ) = payable(owner()).call{value: address(this).balance}("");
+        require(success, "Failed to send ether to the owner");
         // =============================================================================
     }
 }
