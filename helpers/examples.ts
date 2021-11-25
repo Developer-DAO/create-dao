@@ -61,8 +61,9 @@ export function hasRepo({
 }
 
 export function hasExample(name: string): Promise<boolean> {
+  // this is a placeholder if we want to switch to several tempaltes in the future
   return isUrlOk(
-    `https://api.github.com/repos/vercel/next.js/contents/examples/${encodeURIComponent(
+    `https://api.github.com/repos/Developer-DAO/create-dao/contents/templates/${encodeURIComponent(
       name
     )}/package.json`
   )
@@ -91,8 +92,9 @@ export function downloadAndExtractExample(
     throw new Error('This is an internal example for testing the CLI.')
   }
 
+  // this if we ever want to allow the user to specify one of a set of templates
   return pipeline(
-    got.stream('https://codeload.github.com/vercel/next.js/tar.gz/canary'),
-    tar.extract({ cwd: root, strip: 3 }, [`next.js-canary/examples/${name}`])
+    got.stream('https://codeload.github.com/Developer-DAO/create-dao/tar.gz/main'),
+    tar.extract({ cwd: root, strip: 3 }, [`create-dao-main/templates/${name}`]) 
   )
 }

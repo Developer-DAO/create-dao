@@ -125,7 +125,7 @@ export async function createApp({
   const originalDirectory = process.cwd()
 
   const displayedCommand = useYarn ? 'yarn' : 'npm'
-  console.log(`Creating a new Next.js app in ${chalk.green(root)}.`)
+  console.log(`Creating a new DAO in ${chalk.green(root)}.`)
   console.log()
 
   await makeDir(root)
