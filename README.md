@@ -13,12 +13,13 @@ The way [Nader](https://discord.com/channels/883478451850473483/8837055628508078
 
 ### How to use the template:
 
-1. `npx create-dao <dao-name>`
-This installs the dao template in the `<dao-name>` subdirectory
+1. Use the cli to generate the scaffold:
+`npx create-next-app --example=https://github.com/henripal/create-dao/tree/main/template`
+(note that we would need to wrap this using our own CLI)
 
-2. `cd <dao-name>`
+2. `cd` into your project's directory
 
-3. Compile the existing contracts: `npx hardhat compile` (right now this is just a fill-in contract: `template/contracts/Greeter.sol`)
+3. Compile the existing contract: `npx hardhat compile` (right now this is just a fill-in contract: `template/contracts/Greeter.sol`)
 
 4. Deploy a local network: `npx hardhat node`
 
@@ -29,6 +30,7 @@ Note the address of the contract.
 
 7. Start your app: `npm run dev`
 
+(except the wrapping of `create-next-app` and a few modifications, this is mostly taken from https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
 
 ### How this template will be used on a livenet:
 
