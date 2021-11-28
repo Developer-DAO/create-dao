@@ -3,5 +3,8 @@ If you have any ideas, want to work on a feature or just want to get in on the c
 
 ## Running locally
 
+`yarn`
+
 `npm i -g`
-`npx hello`
+
+`npx create-dao`
