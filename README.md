@@ -13,9 +13,7 @@ The way [Nader](https://discord.com/channels/883478451850473483/8837055628508078
 
 ### How to use the template:
 
-1. Use the cli to generate the scaffold:
-`npx create-next-app --example=https://github.com/henripal/create-dao/tree/main/template`
-(note that we would need to wrap this using our own CLI)
+1. Run `npx create-dao`
 
 2. `cd` into your project's directory
 
