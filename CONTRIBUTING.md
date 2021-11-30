@@ -3,8 +3,25 @@ If you have any ideas, want to work on a feature or just want to get in on the c
 
 ## Running locally
 
-`yarn`
+```bash
+# Install dependencies
+$ npm install
+```
+Repeat for the `template` folder.
 
-`npm i -g`
+```bash
+# Start local chain (make sure you have cd'd into the `template` folder)
+$ npm run chain
+```
 
-`npx create-dao`
+```bash
+# Deploy contracts
+$ npm run deploy
+```
+
+```bash
+# Start the frontend
+$ npm run dev
+```
+
+If you want to work on the CLI, just edit the `bin/index.js` file. Once you are done, run `npm i -g` and then `npx create-dao` to test out the changes locally.
