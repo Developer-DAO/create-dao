@@ -18,11 +18,9 @@ contract NFT is ERC721Enumerable, Ownable {
     string public notRevealedUri;
 
     constructor(
-        string memory _name,
-        string memory _symbol,
         string memory _initBaseURI,
         string memory _initNotRevealedUri
-    ) ERC721(_name, _symbol) {
+    ) ERC721("NFT_NAME", "NFT_SYMBOL") {
         setBaseURI(_initBaseURI);
         setNotRevealedURI(_initNotRevealedUri);
     }
