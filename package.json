@@ -1,18 +1,26 @@
 {
   "name": "create-dao",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./index.js"
   },
   "keywords": [],
   "author": "Developer DAO",
   "license": "ISC",
   "bin": {
-    "create-dao": "bin/index.js"
+    "create-dao": "./index.js"
   },
   "dependencies": {
-    "create-next-app": "^12.0.4"
+    "chalk": "2.4.2",
+    "commander": "^8.3.0",
+    "cpy": "^8.1.2",
+    "cross-spawn": "^7.0.3",
+    "prompts": "^2.4.2",
+    "rimraf": "^3.0.2",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
