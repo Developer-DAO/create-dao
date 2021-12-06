@@ -13,7 +13,6 @@ const gitInit = require('./helpers/git');
 
 const init = async ({ appPath, useNpm, typescript }) => {
   console.log('running create app');
-  const template = typescript ? 'typescript' : 'default';
   const root = path.resolve(appPath);
 
   if (!(await checkWriteable.isWriteable(path.dirname(root)))) {
@@ -81,7 +80,6 @@ const init = async ({ appPath, useNpm, typescript }) => {
     '@nomiclabs/hardhat-waffle',
     '@openzeppelin/contracts',
     'chai',
-    'ethereum-waffle',
     'ethers',
     'react',
     'react-dom',
