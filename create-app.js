@@ -76,14 +76,22 @@ const init = async ({ appPath, useNpm, typescript }) => {
    * Default dependencies.
    */
   const dependencies = [
+    "@chakra-ui/react",
+    "@emotion/react",
+    "@emotion/styled",
+    "@nomiclabs/hardhat-ethers",
+    "@nomiclabs/hardhat-waffle",
+    "@openzeppelin/contracts",
     '@nomiclabs/hardhat-ethers',
     '@nomiclabs/hardhat-waffle',
     '@openzeppelin/contracts',
+    "ethereum-waffle",
     'chai',
     'ethers',
-    'react',
-    'react-dom',
-    'next',
+    "framer-motion",
+    "next",
+    "react",
+    "react-dom"
   ];
   /**
    * Default devDependencies.
