@@ -1,9 +1,7 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import Greeter from '../src/artifacts/contracts/Greeter.sol/Greeter.json';
+import { Button, Input, Container, VStack, HStack, Heading } from '@chakra-ui/react';
 
 // Update with the contract address logged out to the CLI when it was deployed
 const greeterAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
@@ -49,16 +47,23 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    setGreeting();
+  }, []);
+
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <button onClick={fetchGreeting}>Fetch Greeting</button>
-        <button onClick={setGreeting}>Set Greeting</button>
-        <input
+    <Container>
+      <VStack mt="50">
+        <Heading>{greeting}</Heading>
+        <Input
           onChange={(e) => setGreetingValue(e.target.value)}
-          placeholder='Set greeting'
+          placeholder="Set greeting"
         />
-      </header>
-    </div>
+        <HStack>
+          <Button onClick={fetchGreeting}>Fetch Greeting</Button>
+          <Button onClick={setGreeting}>Set Greeting</Button>
+        </HStack>
+      </VStack>
+    </Container>
   );
 }

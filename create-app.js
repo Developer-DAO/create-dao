@@ -86,6 +86,10 @@ const init = async ({ appPath, useNpm, typescript }) => {
     'react',
     'react-dom',
     'next',
+    '@chakra-ui/react',
+    '@emotion/react@^11',
+    '@emotion/styled@^11',
+    'framer-motion@^4',
   ];
   /**
    * Default devDependencies.
@@ -132,6 +136,13 @@ const init = async ({ appPath, useNpm, typescript }) => {
     parents: true,
     // cwd: path.join(__dirname, 'templates', template), //for seperate templated folders
     cwd: path.join(__dirname, 'template'), //for single template
+    filter: (name) => {
+      // console.log('file name : ', name);
+      if (name.relativePath === 'package.json') {
+        return false;
+      }
+      return true;
+    },
     rename: (name) => {
       switch (name) {
         case 'gitignore':
