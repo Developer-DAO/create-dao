@@ -90,6 +90,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
     '@emotion/react@^11',
     '@emotion/styled@^11',
     'framer-motion@^4',
+    "react-icons"
   ];
   /**
    * Default devDependencies.
