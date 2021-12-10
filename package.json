@@ -1,8 +1,8 @@
 {
   "name": "create-dao",
-  "version": "1.4.1",
+  "version": "1.4.3",
+  "private": "true",
   "description": "",
-  "private": false,
   "scripts": {
     "dev": "yarn workspace @create-dao/next-app dev",
     "build": "yarn workspace @create-dao/next-app build",
