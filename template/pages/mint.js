@@ -19,7 +19,7 @@ import {
 import Link from 'next/link';
 
 // Update with the contract address logged out to the CLI when it was deployed
-const NFTContractAddress = '0x2143D21061390d69AE1f12c344068ECCF7fb8d2F';
+const NFTContractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
 
 const initialState = {
   totalSupply: '-',
