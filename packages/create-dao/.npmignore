@@ -2,3 +2,6 @@ template/src/artifacts/*
 template/.next
 template/cache
 *.tgz
+
+node_modules
+.next

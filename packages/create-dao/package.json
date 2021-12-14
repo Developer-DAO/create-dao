@@ -1,0 +1,24 @@
+{
+  "name": "create-dao",
+  "version": "1.4.3",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "Developer DAO",
+  "license": "ISC",
+  "bin": {
+    "create-dao": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "2.4.2",
+    "commander": "^8.3.0",
+    "cpy": "^8.1.2",
+    "cross-spawn": "^7.0.3",
+    "prompts": "^2.4.2",
+    "rimraf": "^3.0.2",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

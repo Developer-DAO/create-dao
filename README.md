@@ -9,6 +9,11 @@
 5.  Run `yarn deploy`
 6.  Run `yarn dev`
 
+
+## For publishing
+1.  Run `yarn update-version`
+2.  Then run `yarn publish-latest`
+
 ## What this is supposed to be
 
 `npx create-dao`
