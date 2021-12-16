@@ -1,6 +1,7 @@
 node_modules
 .next
 package-lock.json
+.bin
 
 /node_modules
 /.idea
