@@ -4,7 +4,7 @@ This repo uses [Lerna](https://lerna.js.org/) to manage it's packages
 
 Currently there is only one package create-dao. More packages can be created by adding a folder to the /packages folder and to the array in the packages key in the lerna.json file in the root.
 
-- Important - when adding a new package, be sure to remove the private key from the package.json file of that package.
+- Important - when adding a new package, be sure to remove the private attribute from the package.json file of that package.
 
 ## Testing package
 
