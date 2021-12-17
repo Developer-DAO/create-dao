@@ -1,20 +1,4 @@
-# create-dao
-
-## For [development](docs/local-development.md)
-
-1.  Run `yarn`
-2.  In one terminal
-3.  Run `yarn chain`
-4.  In another terminal
-5.  Run `yarn deploy`
-6.  Run `yarn dev`
-
-## For [publishing](docs/publish-npm.md)
-
-1.  Run `yarn update-version`
-2.  Then run `yarn publish-latest`
-
-## [What this is supposed to be](docs/project-overview.md)
+# Project Overview
 
 `npx create-dao`
 
@@ -52,5 +36,3 @@ The project is still early in development and only supports deployment to local 
 3. `cd <dao_name>`
 4. `yarn deploy:contract`
 5. TBD..
-
-## [Contributing](CONTRIBUTING.md)

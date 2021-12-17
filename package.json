@@ -12,7 +12,7 @@
     "deploy": "yarn workspace @create-dao/next-app deploy",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "leran publish from-package",
-    "build:npx:create-dao": "node ./packages/create-dao/index.js"
+    "start:npx:create-dao": "node ./packages/create-dao/index.js"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
