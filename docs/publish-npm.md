@@ -8,7 +8,7 @@ Currently there is only one package create-dao. More packages can be created by 
 
 ## Testing package
 
-In the root directory run `yarn start:npx:create-dao` to test create dao app locally. This will add a create dao project in the root folder with the folder name of my-dao. Do not commit to the repo, it is for local testing only.
+In the root directory run `yarn create-dao` to test create dao app locally. This will add a create dao project in the root folder with the folder name of my-dao. Do not commit to the repo, it is for local testing only.
 
 ## Version Updating and Publishing
 
