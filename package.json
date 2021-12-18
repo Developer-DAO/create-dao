@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "create-dao-project",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
     "compile": "yarn workspace @create-dao/next-app compile",
     "deploy": "yarn workspace @create-dao/next-app deploy",
     "update-version": "lerna version --force-publish --no-private",
-    "publish-latest": "leran publish from-package",
-    "start:npx:create-dao": "node ./packages/create-dao/index.js"
+    "publish-latest": "lerna publish from-package",
+    "create-dao": "node ./packages/create-dao/index.js"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
