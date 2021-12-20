@@ -19,10 +19,12 @@ contract NFT is ERC721Enumerable, Ownable {
 
     constructor(
         string memory _initBaseURI,
-        string memory _initNotRevealedUri
+        string memory _initNotRevealedUri,
+        uint256 _maxSupply
     ) ERC721("NFT_NAME", "NFT_SYMBOL") {
         setBaseURI(_initBaseURI);
         setNotRevealedURI(_initNotRevealedUri);
+        if (_maxSupply > 0) maxSupply = _maxSupply;
     }
 
     // internal
@@ -33,7 +35,7 @@ contract NFT is ERC721Enumerable, Ownable {
     // public
     function mint(uint256 _mintAmount) public payable {
         uint256 supply = totalSupply();
-        require(!paused, "mint is not paused");
+        require(!paused, "mint is paused");
         require(_mintAmount > 0, "mint amount must be greater than 0");
         require(
             _mintAmount <= maxMintAmount,

@@ -59,6 +59,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
       compile: 'npx hardhat compile',
       deploy:
         'npm run compile && npx hardhat run scripts/deploy.js --network localhost',
+      test: 'npx hardhat coverage',
     },
   };
   /**
@@ -76,11 +77,6 @@ const init = async ({ appPath, useNpm, typescript }) => {
    * Default dependencies.
    */
   const dependencies = [
-    '@nomiclabs/hardhat-ethers',
-    '@nomiclabs/hardhat-waffle',
-    '@openzeppelin/contracts',
-    'chai',
-    'ethereum-waffle',
     'ethers',
     'react',
     'react-dom',
@@ -94,7 +90,17 @@ const init = async ({ appPath, useNpm, typescript }) => {
   /**
    * Default devDependencies.
    */
-  const devDependencies = ['eslint', 'eslint-config-next', 'hardhat'];
+  const devDependencies = [
+    '@openzeppelin/contracts',
+    '@nomiclabs/hardhat-ethers',
+    '@nomiclabs/hardhat-waffle',
+    'chai',
+    'eslint',
+    'eslint-config-next',
+    'ethereum-waffle',
+    'hardhat',
+    'solidity-coverage',
+  ];
   /**
    * TypeScript projects will have type definitions and other devDependencies.
    */
