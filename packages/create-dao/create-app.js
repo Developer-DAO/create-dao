@@ -41,7 +41,6 @@ const init = async ({ appPath, useNpm, typescript }) => {
   console.log(`Creating a new DAO app in ${chalk.green(root)}.`);
   console.log();
 
-  // await makeDir.makeDir(root);
   process.chdir(root);
 
   console.log(chalk.bold(`Using ${displayedCommand}.`));
@@ -90,7 +89,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
     '@emotion/react@^11',
     '@emotion/styled@^11',
     'framer-motion@^4',
-    "react-icons"
+    'react-icons',
   ];
   /**
    * Default devDependencies.
@@ -135,8 +134,8 @@ const init = async ({ appPath, useNpm, typescript }) => {
    */
   await cpy('**', root, {
     parents: true,
-    // cwd: path.join(__dirname, 'templates', template), //for seperate templated folders
-    cwd: path.join(__dirname, 'template'), //for single template
+    cwd: path.join(__dirname, 'templates', template), //for seperate templated folders
+    // cwd: path.join(__dirname, 'template'), //for single template
     filter: (name) => {
       // console.log('file name : ', name);
       if (name.relativePath === 'package.json') {

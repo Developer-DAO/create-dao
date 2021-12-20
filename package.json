@@ -1,8 +1,7 @@
 {
-  "name": "create-dao",
-  "version": "1.4.3",
-  "private": "true",
-  "description": "",
+  "name": "create-dao-project",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "yarn workspace @create-dao/next-app dev",
     "build": "yarn workspace @create-dao/next-app build",
@@ -10,27 +9,16 @@
     "lint": "yarn workspace @create-dao/next-app lint",
     "chain": "yarn workspace @create-dao/next-app chain",
     "compile": "yarn workspace @create-dao/next-app compile",
-    "deploy": "yarn workspace @create-dao/next-app deploy"
+    "deploy": "yarn workspace @create-dao/next-app deploy",
+    "update-version": "lerna version --force-publish --no-private",
+    "publish-latest": "lerna publish from-package",
+    "create-dao": "node ./packages/create-dao/index.js"
   },
-  "keywords": [],
-  "author": "Developer DAO",
-  "license": "ISC",
-  "bin": {
-    "create-dao": "./index.js"
-  },
-  "dependencies": {
-    "chalk": "2.4.2",
-    "commander": "^8.3.0",
-    "cpy": "^8.1.2",
-    "cross-spawn": "^7.0.3",
-    "prompts": "^2.4.2",
-    "rimraf": "^3.0.2",
-    "validate-npm-package-name": "^3.0.0"
-  },
-  "engines": {
-    "node": ">=14"
+  "devDependencies": {
+    "lerna": "^4.0.0"
   },
   "workspaces": [
-    "template"
+    "packages/*",
+    "packages/create-dao/templates/*"
   ]
 }
