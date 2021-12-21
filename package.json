@@ -10,6 +10,8 @@
     "chain": "yarn workspace @create-dao/next-app chain",
     "compile": "yarn workspace @create-dao/next-app compile",
     "deploy": "yarn workspace @create-dao/next-app deploy",
+    "deploy:rinkeby": "yarn workspace @create-dao/next-app deploy:rinkeby",
+    "deploy:mainnet": "yarn workspace @create-dao/next-app deploy:mainnet",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "lerna publish from-package",
     "create-dao": "node ./packages/create-dao/index.js"
