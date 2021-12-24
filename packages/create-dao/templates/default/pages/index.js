@@ -13,12 +13,14 @@ import {
 import Link from 'next/link';
 import { CONFIG } from '../config';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
+import { ConnectWallet } from '../components/ConnectWallet'
 
 export default function Home() {
   const { DAO_NAME, DESCRIPTION, TWITTER, DISCORD, LONG_DESCRIPTION } = CONFIG;
 
   return (
     <Container paddingY="10">
+      <ConnectWallet />
       <Heading textAlign="center">{DAO_NAME}</Heading>
       <Text textAlign="center">{DESCRIPTION}</Text>
       <VStack mt="50">
