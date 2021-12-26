@@ -1,13 +1,13 @@
-import { Head } from 'next/document';
+import Head from 'next/head';
 import { CONFIG } from '../config';
 
-export const SEO = () => {
-  const { DAO_NAME, DESCRIPTION } = CONFIG;
+const { DAO_NAME, DESCRIPTION } = CONFIG;
 
+export const SEO = ({ title = DAO_NAME, description = DESCRIPTION }) => {
   return (
     <Head>
-      <title>{DAO_NAME}</title>
-      <meta name="description" content={DESCRIPTION} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
     </Head>
   );
 };
