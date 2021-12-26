@@ -4,19 +4,19 @@ import {
   Heading,
   Text,
   VStack,
-  Link as ChakraLink,
+  useToast,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import { useContract, useTransaction, useWallet } from '@web3-ui/core';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
-import { ConnectWallet } from '../components/ConnectWallet';
 import NFT_ABI from '../src/artifacts/contracts/NFT.sol/NFT.json';
+import { SEO } from '../components/SEO';
 
 // Update with the contract address logged out to the CLI when it was deployed
 const NFTContractAddress = '0xD506BE3aC0345d9FaE8C2A58Ac2F02E582E68781';
 
 export default function Mint() {
+  const toast = useToast();
   const { connected, provider } = useWallet();
   const nftContract = useContract(NFTContractAddress, NFT_ABI.abi);
   const [maxSupply, setMaxSupply] = useState('-');
@@ -53,28 +53,40 @@ export default function Mint() {
   }, [nftContract]);
 
   return (
-    <Container padding="10">
-      <VStack>
-        <ChakraLink as={Link} href="/">
-          Return home
-        </ChakraLink>
-        <ConnectWallet />
-        {!connected && <Text color="red">Please connect your wallet</Text>}
-        <Heading style={{ marginTop: '40px' }}>Mint NFT</Heading>
-        <Text>
-          Minted {totalSupply}/{maxSupply}
-        </Text>
-        <Button
-          onClick={async () => {
-            await execMint();
-            await fetchData();
-          }}
-          isLoading={mintLoading}
-        >
-          Mint Ξ{mintPrice}
-        </Button>
-        {mintError && <Text color="red">{mintError.message}</Text>}
-      </VStack>
-    </Container>
+    <>
+      <SEO title="Mint NFT" />
+      <Container padding="10">
+        <VStack>
+          <Heading style={{ marginTop: '40px' }}>Mint NFT</Heading>
+          <Text>
+            Minted {totalSupply}/{maxSupply}
+          </Text>
+          <Button
+            onClick={async () => {
+              try {
+                await execMint();
+                toast({
+                  title: 'Successfully minted your NFT!',
+                  status: 'success',
+                });
+              } catch (error) {
+                console.error(error);
+                toast({
+                  title: 'Failed to mint your NFT',
+                  description: error.message,
+                  status: 'error',
+                });
+              } finally {
+                await fetchData();
+              }
+            }}
+            isLoading={mintLoading}
+          >
+            Mint Ξ{mintPrice}
+          </Button>
+          {mintError && <Text color="red">{mintError.message}</Text>}
+        </VStack>
+      </Container>
+    </>
   );
 }
