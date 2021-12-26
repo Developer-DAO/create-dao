@@ -5,3 +5,5 @@ template/cache
 
 node_modules
 .next
+
+templates/default/src/artifacts/*
