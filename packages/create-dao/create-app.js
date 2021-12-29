@@ -65,7 +65,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
         'npm run compile && npx hardhat run scripts/deploy.js --network mainnet',
       test: 'npx hardhat coverage',
       export: 'next export',
-      surge: 'cp out/index.html out/200.html && surge ./out',
+      surge: 'npm run build && npm run export && cp out/index.html out/200.html && surge ./out',
     },
   };
   /**
