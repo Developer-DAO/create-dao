@@ -14,7 +14,8 @@
     "deploy:mainnet": "yarn workspace @create-dao/next-app deploy:mainnet",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "lerna publish from-package",
-    "create-dao": "node ./packages/create-dao/index.js"
+    "create-dao": "node ./packages/create-dao/index.js",
+    "surge": "yarn workspace @create-dao/next-app surge"
   },
   "devDependencies": {
     "lerna": "^4.0.0"

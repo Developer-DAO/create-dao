@@ -97,3 +97,5 @@ yarn.lock
 
 # DynamoDB Local files
 .dynamodb/
+
+out/

@@ -35,7 +35,6 @@ export default function Mint() {
       await nftContract.totalSupply(),
       await nftContract.cost(),
     ]);
-    console.log({ maxSupply, totalSupply: totalSupply.toString(), mintPrice });
     setMaxSupply(maxSupply.toString());
     setTotalSupply(totalSupply.toString());
     setMintPrice(ethers.utils.formatEther(mintPrice.toString()));
@@ -65,12 +64,15 @@ export default function Mint() {
             onClick={async () => {
               try {
                 await execMint();
-                toast({
-                  title: 'Successfully minted your NFT!',
-                  status: 'success',
-                });
+                if (!mintError) {
+                  toast({
+                    title: 'Successfully minted your NFT!',
+                    status: 'success',
+                  });
+                } else {
+                  throw new Error(mintError);
+                }
               } catch (error) {
-                console.error(error);
                 toast({
                   title: 'Failed to mint your NFT',
                   description: error.message,

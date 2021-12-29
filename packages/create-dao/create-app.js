@@ -64,6 +64,8 @@ const init = async ({ appPath, useNpm, typescript }) => {
       'deploy:mainnet':
         'npm run compile && npx hardhat run scripts/deploy.js --network mainnet',
       test: 'npx hardhat coverage',
+      export: 'next export',
+      surge: 'cp out/index.html out/200.html && surge ./out',
     },
   };
   /**
@@ -90,7 +92,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
     '@emotion/styled@^11',
     'framer-motion@^4',
     'react-icons',
-    '@web3-ui/core'
+    '@web3-ui/core',
   ];
   /**
    * Default devDependencies.
