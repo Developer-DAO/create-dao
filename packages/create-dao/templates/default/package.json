@@ -13,7 +13,7 @@
     "deploy:rinkeby": "npm run compile && npx hardhat run scripts/deploy.js --network rinkeby",
     "deploy:mainnet": "npm run compile && npx hardhat run scripts/deploy.js --network mainnet",
     "export": "next export",
-    "surge": "npm run build && npm run export && cp out/index.html out/200.html && surge ./out"
+    "surge": "npm run build && npm run export && cp out/index.html out/200.html && npx surge ./out"
   },
   "dependencies": {
     "@chakra-ui/react": "1.7.2",
