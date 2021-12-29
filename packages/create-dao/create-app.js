@@ -59,6 +59,10 @@ const init = async ({ appPath, useNpm, typescript }) => {
       compile: 'npx hardhat compile',
       deploy:
         'npm run compile && npx hardhat run scripts/deploy.js --network localhost',
+      'deploy:rinkeby':
+        'npm run compile && npx hardhat run scripts/deploy.js --network rinkeby',
+      'deploy:mainnet':
+        'npm run compile && npx hardhat run scripts/deploy.js --network mainnet',
       test: 'npx hardhat coverage',
     },
   };
