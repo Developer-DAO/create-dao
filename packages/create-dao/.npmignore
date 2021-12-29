@@ -7,3 +7,6 @@ node_modules
 .next
 
 templates/default/src/artifacts/*
+templates/default/out
+templates/default/cache
+templates/default/.next
