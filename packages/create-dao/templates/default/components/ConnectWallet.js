@@ -8,7 +8,7 @@ export const ConnectWallet = () => {
     <VStack>
       <ConnectWalletBtn />
       {connected && !correctNetwork && (
-        <Text color="red">Please switch to the Rinkeby network.</Text>
+        <Text color="red">Please switch to the correct network.</Text>
       )}
     </VStack>
   );
