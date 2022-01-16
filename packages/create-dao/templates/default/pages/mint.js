@@ -18,7 +18,7 @@ const NFTContractAddress = '0xD506BE3aC0345d9FaE8C2A58Ac2F02E582E68781';
 export default function Mint() {
   const toast = useToast();
   const { connected, provider, correctNetwork } = useWallet();
-  const nftContract = useContract(NFTContractAddress, NFT_ABI.abi);
+  const [nftContract, isReady] = useContract(NFTContractAddress, NFT_ABI.abi);
   const [maxSupply, setMaxSupply] = useState('-');
   const [totalSupply, setTotalSupply] = useState('-');
   const [mintPrice, setMintPrice] = useState();
