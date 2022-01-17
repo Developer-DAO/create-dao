@@ -16,15 +16,10 @@
     "surge": "npm run build && npm run export && cp out/index.html out/200.html && npx surge ./out"
   },
   "dependencies": {
-    "@chakra-ui/react": "1.7.2",
+    "@chakra-ui/react": "1.7.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@nomiclabs/hardhat-ethers": "2.0.3",
-    "@nomiclabs/hardhat-waffle": "2.0.1",
-    "@openzeppelin/contracts": "4.4.0",
-    "@web3-ui/core": "^0.2.0",
-    "chai": "4.3.4",
-    "ethereum-waffle": "3.4.0",
+    "@web3-ui/core": "^0.5.1",
     "ethers": "5.5.2",
     "framer-motion": "^4",
     "next": "12.0.7",
@@ -33,9 +28,14 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "2.0.4",
+    "@nomiclabs/hardhat-waffle": "2.0.1",
+    "@openzeppelin/contracts": "4.4.1",
+    "chai": "4.3.4",
     "eslint": "8.4.0",
     "eslint-config-next": "12.0.7",
-    "hardhat": "2.7.0",
+    "ethereum-waffle": "3.4.0",
+    "hardhat": "2.8.2",
     "solidity-coverage": "0.7.17"
   }
 }
