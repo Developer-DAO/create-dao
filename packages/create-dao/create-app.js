@@ -93,7 +93,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
     '@emotion/styled@^11',
     'framer-motion@^4',
     'react-icons',
-    '@web3-ui/core@0.4.1',
+    '@web3-ui/core@0.5.1',
   ];
   /**
    * Default devDependencies.

@@ -27,9 +27,9 @@ export default function Mint() {
 
   const fetchData = async () => {
     const [maxSupply, totalSupply, mintPrice] = await Promise.all([
-      await nftContract[0].maxSupply(),
-      await nftContract[0].totalSupply(),
-      await nftContract[0].cost(),
+      await nftContract.maxSupply(),
+      await nftContract.totalSupply(),
+      await nftContract.cost(),
     ]);
     setMaxSupply(maxSupply.toString());
     setTotalSupply(totalSupply.toString());
@@ -40,7 +40,7 @@ export default function Mint() {
     if (
       connected &&
       provider &&
-      nftContract[1] &&
+      isReady &&
       correctNetwork &&
       Object.entries(nftContract).length > 0
     ) {
@@ -50,7 +50,7 @@ export default function Mint() {
 
   const handleMint = async () => {
     try {
-      const response = await nftContract[0].mint(1, {
+      const response = await nftContract.mint(1, {
         value: ethers.utils.parseEther(mintPrice),
       });
       // wait for the transaction to be confirmed
