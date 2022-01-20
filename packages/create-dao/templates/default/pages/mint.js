@@ -11,9 +11,12 @@ import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import NFT_ABI from '../src/artifacts/contracts/NFT.sol/NFT.json';
 import { SEO } from '../components/SEO';
+import { CONFIG } from '../config';
+
+const { NFT_ADDRESS } = CONFIG;
 
 // Update with the contract address logged out to the CLI when it was deployed
-const NFTContractAddress = '0xD506BE3aC0345d9FaE8C2A58Ac2F02E582E68781';
+const NFTContractAddress = NFT_ADDRESS;
 
 export default function Mint() {
   const toast = useToast();

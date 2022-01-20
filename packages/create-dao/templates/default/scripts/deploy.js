@@ -1,4 +1,6 @@
+const fs = require('fs');
 const hre = require('hardhat');
+const configFile = fs.readFileSync('config.js', 'utf8');
 
 async function main() {
   const ERC20Token = await hre.ethers.getContractFactory('ERC20Token');
@@ -10,6 +12,13 @@ async function main() {
   const nft = await NFT.deploy('test', 'test', 10000);
   await nft.deployed();
   console.log('NFT deployed to:', nft.address);
+  // open config file and replace NETWORK_ID with the user input
+  const addNFTToConfig = configFile.replace(
+    /(NFT_ADDRESS:)(.*)/g,
+    `NFT_ADDRESS: "${nft.address}",`
+  );
+
+  fs.writeFileSync('config.js', addNFTToConfig);
 }
 
 main()
