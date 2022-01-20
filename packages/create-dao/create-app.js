@@ -67,6 +67,8 @@ const init = async ({ appPath, useNpm, typescript }) => {
       export: 'next export',
       surge:
         'npm run build && npm run export && cp out/index.html out/200.html && npx surge ./out',
+      setup: 'node scripts/setup.js',
+      network: 'node scripts/changeNetwork.js',
     },
   };
   /**
@@ -203,10 +205,13 @@ const init = async ({ appPath, useNpm, typescript }) => {
   console.log('In another terminal type:');
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
-    `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}deploy`)}`
+    `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}setup`)}`
   );
   console.log(
-    '    Change the greeterAddress in pages/index.js to the one your contract was deployed to'
+    '    Include information about your DAO - (this can be changed later) '
+  );
+  console.log(
+    `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}deploy`)}`
   );
   console.log(
     `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}dev`)}`
