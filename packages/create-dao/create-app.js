@@ -108,6 +108,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
     'ethereum-waffle',
     'hardhat',
     'solidity-coverage',
+    'prompts',
   ];
   /**
    * TypeScript projects will have type definitions and other devDependencies.
