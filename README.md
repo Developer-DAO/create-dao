@@ -1,6 +1,31 @@
 # create-dao
 
-## For [development](docs/local-development.md)
+_In Development 🏗️_
+
+To use the npx package run, in a terminal:
+`npx create-dao`
+
+## Technologies
+
+This project is built with the following open source libraries, frameworks and languages.
+| Tech | Description |
+| --------------------------------------------- | ------------------------------------------------------------------ |
+| [NextJS](https://nextjs.org/) | Front end user interface |
+| [ChakraUI](https://chakra-ui.com/) | A simple & modular component library |
+| [Hardhat](https://hardhat.org/) | Ethereum development environment for professionals |
+| [@web3-ui/core](https://www.npmjs.com/package/@web3-ui/core) | A set of React components and hooks made for web3-specific use cases. |
+
+## How to Contribute
+
+Read the [CONTRIBUTING GUIDELINES](/CONTRIBUTING.md).
+
+## Issues
+
+If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/Developer-DAO/create-dao/issues)
+
+## Quick Start Notes
+
+### For [development](docs/development/local-development.md)
 
 1.  Run `yarn`
 2.  In one terminal
@@ -9,48 +34,11 @@
 5.  Run `yarn deploy`
 6.  Run `yarn dev`
 
-## For [publishing](docs/publish-npm.md)
+### For [publishing](docs/development/publish-npm.md)
 
 1.  Run `yarn update-version`
 2.  Then run `yarn publish-latest`
 
-## [What this is supposed to be](docs/project-overview.md)
-
-`npx create-dao`
-
-The way [Nader](https://discord.com/channels/883478451850473483/883705562850807808/910908371446673408) sees it:
-
-1. A smart contract that deploys an NFT or ERC20 (or have contracts for both)
-2. A front end that describes how the dao works (info pages, etc...)
-3. A guide that is built into the README that describes how to token-gate a discord, and the various tradeoffs around decisions when setting up a DAO
-4. A user interface that allows members to buy or mint tokens
-
-### ! Important
-
-The project is still early in development and only supports deployment to local chain out of the box. You can of course tweak the code to deploy to Rinkeby, but a low-code solution for that is still in the works.
-
-### How to use the template:
-
-1. Run `npx create-dao`
-
-2. `cd` into your project's directory
-
-3. Start a local Hardhat chain: `npm run chain`
-
-4. Deploy the contracts: `npm run deploy`
-
-5. Change the `greeterAddress` in `pages/index.js` to the one your contract was deployed to in #4 above.
-
-6. Start your app: `npm run dev`
-
-(except the wrapping of `create-next-app` and a few modifications, this is mostly taken from https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
-
-### How this template will be used on a livenet:
-
-1. Run `npx create-dao <dao_name>`
-2. Answer questions according to your preference.
-3. `cd <dao_name>`
-4. `yarn deploy:contract`
-5. TBD..
+### [What this is supposed to be](docs/development/project-overview.md)
 
 ## [Contributing](CONTRIBUTING.md)

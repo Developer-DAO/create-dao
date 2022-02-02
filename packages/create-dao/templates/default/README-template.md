@@ -1,15 +1,33 @@
-# Basic Sample Hardhat Project
+# create-dao
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+_In Development 🏗️_
 
-Try running some of the following tasks:
+## Quick Start Notes
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+1.  Open your terminal
+2.  Run `npm run install`
+3.  Run `npm run setup` for a CLI setup of your DAO
+4.  Run `npm run chain` for a local hardhat network for testing
+5.  Open another terminal
+6.  Run `npm run deploy` to compile and deploy the contract
+7.  Run `npm run dev` to view on http://localhost:3000/
+
+Additional - Run `npm run network` to change networks
+
+## Extended User Docs
+
+For more information please refer to (User Docs)[https://github.com/Developer-DAO/create-dao/blob/main/docs/user/toc.md]
+
+## Issues
+
+If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/Developer-DAO/create-dao/issues)
+
+## Technologies
+
+This project is built with the following open source libraries, frameworks and languages.
+| Tech | Description |
+| --------------------------------------------- | ------------------------------------------------------------------ |
+| [NextJS](https://nextjs.org/) | Front end user interface |
+| [ChakraUI](https://chakra-ui.com/) | A simple & modular component library |
+| [Hardhat](https://hardhat.org/) | Ethereum development environment for professionals |
+| [@web3-ui/core](https://www.npmjs.com/package/@web3-ui/core) | A set of React components and hooks made for web3-specific use cases. |

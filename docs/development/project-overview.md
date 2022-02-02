@@ -1,5 +1,13 @@
 # Project Overview
 
+## This project is evolving
+
+To find issues to work on, please refer to [ISSUES](https://github.com/Developer-DAO/create-dao/issues)
+
+For contributing, please refer to [CONTRIBUTING](https://github.com/Developer-DAO/create-dao/blob/main/CONTRIBUTING.md)
+
+## Below is the inital overview for the project
+
 `npx create-dao`
 
 The way [Nader](https://discord.com/channels/883478451850473483/883705562850807808/910908371446673408) sees it:
