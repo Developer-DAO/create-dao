@@ -1,6 +1,6 @@
 # create-dao
 
-_In Development 🏗️_
+_We have halted the development for this project for now._
 
 To use the npx package run, in a terminal:
 `npx create-dao`
